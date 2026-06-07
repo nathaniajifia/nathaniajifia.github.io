@@ -3,82 +3,299 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nathania Jifia — Interior Design Portfolio 2025</title>
-<meta name="description" content="Selected interior design work by Nathania Jifia. Residential, commercial, and installation projects 2024–2025." />
+<title>Nathania Jifia — Interior Designer</title>
+<meta name="description" content="Interior design portfolio by Nathania Jifia. Residential, hospitality, and installation projects." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav__inner">
-    <a href="#top" class="nav__brand">Nathania Jifia</a>
-    <nav class="nav__links">
-      <a href="#about">About</a>
+<!-- TOP NAV (white, right-aligned) -->
+<header class="top" id="top">
+  <div class="top__inner">
+    <nav class="topnav">
       <a href="#work">Work</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <span class="nav__year">2025</span>
   </div>
 </header>
 
-<main id="top">
+<main>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__stage">
-      <div class="hero__copy">
-        <h1 class="hero__title">
-          <span class="hero__title-1">Interior</span>
-          <span class="hero__title-2">Design</span>
-          <span class="hero__title-3"><em>Portfolio.</em></span>
-        </h1>
-
-        <p class="hero__tagline">
-          Considered residential, hospitality, and installation work —
-          built around <em>warmth</em>, <em>restraint</em>, and a sensitivity
-          to natural materials.
-        </p>
-
-        <dl class="hero__meta">
-          <div><dt>Designer</dt><dd>Nathania Jifia</dd></div>
-          <div><dt>Practice</dt><dd>4+ Years</dd></div>
-          <div><dt>Selected</dt><dd>7 Projects · 2024–25</dd></div>
-        </dl>
-      </div>
-
-      <figure class="hero__feature">
-        <img src="assets/img-007.jpg" alt="M Living Room — featured project, dark wood and marble" loading="eager" />
-        <figcaption>
-          <span>Featured</span>
-          <strong>M Living Room</strong>
-          <span class="hero__feature-meta">Residential · Jakarta · 2024</span>
-        </figcaption>
-      </figure>
+    <div class="hero__caption">
+      <h1 class="hero__title">Nathania Jifia</h1>
+      <p class="hero__sub">Interior Designer</p>
     </div>
 
-    <a href="#about" class="hero__cue">
-      <span>Begin the tour</span>
-      <span class="hero__arrow">↓</span>
-    </a>
+    <div class="carousel" id="carousel">
+      <div class="carousel__stage">
+        <figure class="slide" data-name="M Living Room"             data-type="Residential"><img src="assets/img-007.jpg" alt="M Living Room" loading="eager"/></figure>
+        <figure class="slide" data-name="Pavillon Dining Space"     data-type="Residential"><img src="assets/img-026.jpg" alt="Pavillon Dining Space" loading="lazy"/></figure>
+        <figure class="slide" data-name="Countryside Villa Bedroom" data-type="Residential"><img src="assets/img-031.jpg" alt="Countryside Villa Bedroom" loading="lazy"/></figure>
+        <figure class="slide" data-name="Inhouse Corporate Project" data-type="Office"><img src="assets/img-046.jpg" alt="Inhouse Corporate Project" loading="lazy"/></figure>
+        <figure class="slide" data-name="Vintage Photobox"          data-type="Design Competition"><img src="assets/img-092.jpg" alt="Vintage Photobox Installation" loading="lazy"/></figure>
+        <figure class="slide" data-name="Blossom Affair"            data-type="Concept Project"><img src="assets/img-099.jpg" alt="Blossom Affair" loading="lazy"/></figure>
+        <figure class="slide" data-name="Matcha Café"               data-type="Concept Project"><img src="assets/img-108.jpg" alt="Matcha Café" loading="lazy"/></figure>
+        <figure class="slide" data-name="S Condominium"             data-type="Residential"><img src="assets/scondo/scondo-017-002.jpg" alt="S Condominium" loading="lazy"/></figure>
+      </div>
+
+      <span class="carousel__counter">
+        <span class="carousel__index">01</span>
+        <span class="carousel__sep">/</span>
+        <span class="carousel__total">08</span>
+      </span>
+    </div>
   </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <header class="kicker">
+      <span>Work</span>
+    </header>
+
+    <div class="grid">
+
+      <a class="tile reveal" href="#project-1">
+        <figure class="tile__img"><img src="assets/img-007.jpg" alt="M Living Room" loading="lazy"/></figure>
+        <figcaption class="tile__cap">
+          <span class="tile__name">M Living Room</span>
+          <span class="tile__type">Residential</span>
+        </figcaption>
+      </a>
+
+      <a class="tile reveal" href="#project-2">
+        <figure class="tile__img"><img src="assets/img-026.jpg" alt="Pavillon Dining Space" loading="lazy"/></figure>
+        <figcaption class="tile__cap">
+          <span class="tile__name">Pavillon Dining Space</span>
+          <span class="tile__type">Residential</span>
+        </figcaption>
+      </a>
+
+      <a class="tile reveal" href="#project-3">
+        <figure class="tile__img"><img src="assets/img-031.jpg" alt="Countryside Villa Bedroom" loading="lazy"/></figure>
+        <figcaption class="tile__cap">
+          <span class="tile__name">Countryside Villa Bedroom</span>
+          <span class="tile__type">Residential</span>
+        </figcaption>
+      </a>
+
+      <a class="tile reveal" href="#project-4">
+        <figure class="tile__img"><img src="assets/img-046.jpg" alt="Inhouse Corporate Project" loading="lazy"/></figure>
+        <figcaption class="tile__cap">
+          <span class="tile__name">Inhouse Corporate Project</span>
+          <span class="tile__type">Office</span>
+        </figcaption>
+      </a>
+
+      <a class="tile reveal" href="#project-5">
+        <figure class="tile__img"><img src="assets/img-092.jpg" alt="Vintage Photobox Installation" loading="lazy"/></figure>
+        <figcaption class="tile__cap">
+          <span class="tile__name">Vintage Photobox Installation</span>
+          <span class="tile__type">Design Competition</span>
+        </figcaption>
+      </a>
+
+      <a class="tile reveal" href="#project-6">
+        <figure class="tile__img"><img src="assets/img-099.jpg" alt="Blossom Affair" loading="lazy"/></figure>
+        <figcaption class="tile__cap">
+          <span class="tile__name">Blossom Affair</span>
+          <span class="tile__type">Concept Project</span>
+        </figcaption>
+      </a>
+
+      <a class="tile reveal" href="#project-7">
+        <figure class="tile__img"><img src="assets/img-108.jpg" alt="Matcha Café" loading="lazy"/></figure>
+        <figcaption class="tile__cap">
+          <span class="tile__name">Matcha Café</span>
+          <span class="tile__type">Concept Project</span>
+        </figcaption>
+      </a>
+
+      <a class="tile reveal" href="#project-8">
+        <figure class="tile__img"><img src="assets/scondo/scondo-017-002.jpg" alt="S Condominium" loading="lazy"/></figure>
+        <figcaption class="tile__cap">
+          <span class="tile__name">S Condominium</span>
+          <span class="tile__type">Residential</span>
+        </figcaption>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- PROJECT DETAILS -->
+
+  <article class="story" id="project-1">
+    <div class="story__inner">
+      <header class="story__head">
+        <span class="story__num">Project 01</span>
+        <h2 class="story__title">M Living Room</h2>
+        <span class="story__type">Residential</span>
+      </header>
+      <p class="story__copy">
+        A modern, sophisticated living space that blends warmth and elegance. The high
+        ceiling opens up the room, creating gentle lighting and a cozy atmosphere. Soft
+        wood tones and dark marble form a calm, contemporary atmosphere, perfect for
+        relaxing or gathering with loved ones.
+      </p>
+      <div class="story__gallery">
+        <figure class="reveal"><img src="assets/img-007.jpg" alt="M Living Room — bar and kitchen" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-020.jpg" alt="M Living Room — dining nook" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-008.jpg" alt="M Living Room — TV wall detail" loading="lazy"/></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="story" id="project-2">
+    <div class="story__inner">
+      <header class="story__head">
+        <span class="story__num">Project 02</span>
+        <h2 class="story__title">Pavillon Dining Space</h2>
+        <span class="story__type">Residential</span>
+      </header>
+      <p class="story__copy">
+        A semi-outdoor dining area designed to blur the boundaries between indoor and
+        outdoor. The wooden slatted roof filters sunlight beautifully throughout the day,
+        casting soft shadows that bring the space to life. Natural materials and neutral
+        tones create a warm <em>Japandi</em> atmosphere.
+      </p>
+      <div class="story__gallery">
+        <figure class="reveal"><img src="assets/img-026.jpg" alt="Pavillon dining — semi-outdoor kitchen" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-025.jpg" alt="Pavillon dining — glass facade and timber decking" loading="lazy"/></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="story" id="project-3">
+    <div class="story__inner">
+      <header class="story__head">
+        <span class="story__num">Project 03</span>
+        <h2 class="story__title">Countryside Villa Bedroom</h2>
+        <span class="story__type">Residential</span>
+      </header>
+      <p class="story__copy">
+        A peaceful space that feels warm and embraces simplicity. Woven details, natural
+        wood tones, and gentle light from large openings enhance the connection between
+        interior comfort and the surrounding countryside.
+      </p>
+      <div class="story__gallery">
+        <figure class="reveal"><img src="assets/img-031.jpg" alt="Countryside villa bedroom with view" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-029.jpg" alt="Countryside villa corridor with rattan" loading="lazy"/></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="story" id="project-4">
+    <div class="story__inner">
+      <header class="story__head">
+        <span class="story__num">Project 04</span>
+        <h2 class="story__title">Inhouse Corporate Project</h2>
+        <span class="story__type">Office</span>
+      </header>
+      <p class="story__copy">
+        A compilation of Arwana's in-house projects — innovative designs developed and
+        managed internally to meet the company's functional and creative needs. A head
+        office renovation highlighting local materials and craftsmanship, inspired by
+        Indonesia's nature and the warmth of repurposed factory wood.
+      </p>
+      <div class="story__gallery">
+        <figure class="reveal"><img src="assets/img-046.jpg" alt="Arwana — boardroom with wood ceiling" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-083.jpg" alt="Arwana — granite catalog dining shot" loading="lazy"/></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="story" id="project-5">
+    <div class="story__inner">
+      <header class="story__head">
+        <span class="story__num">Project 05 — <em>Competition Winner</em></span>
+        <h2 class="story__title">Vintage Photobox Installation</h2>
+        <span class="story__type">Design Competition</span>
+      </header>
+      <p class="story__copy">
+        An installation competition exploring vintage aesthetics through spatial design.
+        The project combines nostalgic charm with interactive elements — antique polished
+        walnut and velvet curtains alongside an aluminum, black and white scheme.
+      </p>
+      <div class="story__gallery">
+        <figure class="reveal"><img src="assets/img-092.jpg" alt="Vintage photobox — dark walnut version" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-097.jpg" alt="Vintage photobox — white aluminum version" loading="lazy"/></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="story" id="project-6">
+    <div class="story__inner">
+      <header class="story__head">
+        <span class="story__num">Project 06</span>
+        <h2 class="story__title">Blossom Affair</h2>
+        <span class="story__type">Concept Project</span>
+      </header>
+      <p class="story__copy">
+        A sweet yet elegant-vintage installation that blends pastel florals, artificial
+        vines, and structured geometry to create a romantic yet refined atmosphere.
+      </p>
+      <div class="story__gallery">
+        <figure class="reveal"><img src="assets/img-099.jpg" alt="Blossom Affair — floral detail" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-100.jpg" alt="Blossom Affair — full installation" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-101.jpg" alt="Blossom Affair — pedestal arrangement" loading="lazy"/></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="story" id="project-7">
+    <div class="story__inner">
+      <header class="story__head">
+        <span class="story__num">Project 07</span>
+        <h2 class="story__title">Matcha Café</h2>
+        <span class="story__type">Concept Project</span>
+      </header>
+      <p class="story__copy">
+        A Japandi-inspired café blending Japanese minimalism with Scandinavian warmth.
+        Natural materials, soft curves, and muted tones. The matcha bar serves as the
+        main feature, complemented by warm wood and a small zen garden — together they
+        evoke a serene balance and timeless simplicity.
+      </p>
+      <div class="story__gallery">
+        <figure class="reveal"><img src="assets/img-108.jpg" alt="Matcha café — counter interior" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-106.jpg" alt="Matcha café — exterior" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/img-105.jpg" alt="Matcha café — tile and shelving detail" loading="lazy"/></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="story" id="project-8">
+    <div class="story__inner">
+      <header class="story__head">
+        <span class="story__num">Project 08</span>
+        <h2 class="story__title">S Condominium</h2>
+        <span class="story__type">Residential</span>
+      </header>
+      <p class="story__copy">
+        A Modern Contemporary home designed for a Singaporean client. A partial renovation
+        focused on transforming the living and dining areas, with bespoke carpentry for
+        the study and a platform bed in the master bedroom. Clean lines and storage
+        functionality create a spacious environment that enhances comfort and everyday living.
+      </p>
+      <div class="story__gallery">
+        <figure class="reveal"><img src="assets/scondo/scondo-017-002.jpg" alt="S Condominium — living room" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/scondo/scondo-017-000.jpg" alt="S Condominium — dining nook" loading="lazy"/></figure>
+        <figure class="reveal"><img src="assets/scondo/scondo-017-001.jpg" alt="S Condominium — kitchen and entry" loading="lazy"/></figure>
+      </div>
+    </div>
+  </article>
 
   <!-- ABOUT -->
   <section class="about" id="about">
-    <div class="section__head">
-      <span class="section__num">01 / About</span>
-      <h2 class="section__title">About<br/>Me</h2>
-    </div>
+    <header class="kicker"><span>About</span></header>
 
     <div class="about__grid">
       <figure class="about__photo reveal">
         <img src="assets/img-003.jpg" alt="Portrait of Nathania Jifia" loading="lazy" />
-        <figcaption>
-          <strong>Nathania Jifia</strong>
-          <span>Interior Designer</span>
-        </figcaption>
       </figure>
 
       <div class="about__copy reveal">
@@ -88,284 +305,47 @@
           and ideas — pairing strong problem-solving with a calm, considered eye for space.
         </p>
 
-        <div class="about__grid-info">
+        <dl class="about__list">
           <div>
-            <h4>Education</h4>
-            <p><strong>Tarumanagara University</strong> · Architecture · 2021<br/>
-              <span class="muted">Qualified for Scopus index international journals in interior</span><br/>
-              SMAK 1 PENABUR Jakarta · 2017
-            </p>
+            <dt>Education</dt>
+            <dd>Tarumanagara University — Architecture<br/>SMAK 1 PENABUR Jakarta</dd>
           </div>
-
           <div>
-            <h4>Languages</h4>
-            <p>
-              English — B2, IELTS, British Council<br/>
-              Mandarin — HSK 2 / elementary beginner<br/>
-              Bahasa — Native
-            </p>
+            <dt>Languages</dt>
+            <dd>English (C1, IELTS) · Mandarin (HSK 2) · Bahasa (Native)</dd>
           </div>
-
           <div>
-            <h4>Key Skills</h4>
-            <ul class="chips">
-              <li>Visual Storytelling</li>
-              <li>Design Layout</li>
-              <li>Sketchup</li>
-              <li>AutoCAD</li>
-              <li>Enscape</li>
-              <li>Adobe Photoshop</li>
-              <li>Microsoft Office</li>
-            </ul>
+            <dt>Skills</dt>
+            <dd>Visual Storytelling · Sketchup · AutoCAD · Enscape · Adobe Photoshop</dd>
           </div>
-
           <div>
-            <h4>Experience</h4>
-            <p>
-              <strong>In-House Interior Designer</strong><br/>
-              <span class="muted">PT Arwana Citramulia · 2023 – Present</span>
-            </p>
-            <p>
-              <strong>Content Strategist</strong><br/>
-              <span class="muted">Boga Group · 2022 – 2023</span>
-            </p>
-            <p>
-              <strong>Freelance Designer</strong><br/>
-              <span class="muted">Since 2021</span>
-            </p>
+            <dt>Experience</dt>
+            <dd>
+              Interior Designer — iPoise Design<br/>
+              In-House Designer — PT Arwana Citramulia<br/>
+              Content Strategist — Boga Group<br/>
+              Freelance Designer
+            </dd>
           </div>
-        </div>
+        </dl>
       </div>
     </div>
   </section>
-
-  <!-- WORK INTRO -->
-  <section class="work-intro" id="work">
-    <div class="section__head">
-      <span class="section__num">02 / Selected Work</span>
-      <h2 class="section__title">Seven<br/><em>projects.</em></h2>
-    </div>
-    <p class="work-intro__copy">
-      A selection of residential, commercial, and installation work from 2024–2025 — built
-      around warmth, restraint, and a sensitivity to natural materials.
-    </p>
-  </section>
-
-  <!-- PROJECT 01 — M Living Room -->
-  <article class="project project--01" id="project-1">
-    <div class="project__meta">
-      <span class="project__num">Project 01</span>
-      <h3 class="project__title">M Living Room</h3>
-      <dl class="project__data">
-        <div><dt>Year</dt><dd>2024</dd></div>
-        <div><dt>Type</dt><dd>Residential</dd></div>
-        <div><dt>Area</dt><dd>42 SQM</dd></div>
-      </dl>
-      <p class="project__copy">
-        A modern, sophisticated living space that blends warmth and elegance. A high
-        ceiling opens the room, creating gentle light and a cosy atmosphere. Soft wood
-        tones and dark marble form a calm, contemporary mood — perfect for relaxing or
-        gathering with loved ones.
-      </p>
-      <span class="project__tag">Residential · Jakarta</span>
-    </div>
-
-    <div class="project__media project__media--feature">
-      <figure class="reveal feature-main"><img src="assets/img-007.jpg" alt="M Living Room — bar and kitchen view" loading="lazy"/></figure>
-      <div class="project__media-row">
-        <figure class="reveal"><img src="assets/img-020.jpg" alt="M Living Room — TV wall and dining nook" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-008.jpg" alt="M Living Room — TV wall detail" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <!-- PROJECT 02 — Pavillon Dining -->
-  <article class="project project--02" id="project-2">
-    <div class="project__media project__media--pair">
-      <figure class="reveal"><img src="assets/img-026.jpg" alt="Pavillon dining — semi-outdoor kitchen" loading="lazy"/></figure>
-      <figure class="reveal"><img src="assets/img-025.jpg" alt="Pavillon dining — glass facade and timber decking" loading="lazy"/></figure>
-    </div>
-
-    <div class="project__meta project__meta--right">
-      <span class="project__num">Project 02</span>
-      <h3 class="project__title">Pavillon Dining Space</h3>
-      <dl class="project__data">
-        <div><dt>Year</dt><dd>2024</dd></div>
-        <div><dt>Type</dt><dd>Residential</dd></div>
-      </dl>
-      <p class="project__copy">
-        A semi-outdoor dining area designed to blur the boundary between indoor and out.
-        A wooden slatted roof filters sunlight throughout the day, casting soft shadows
-        across natural materials and neutral tones — a warm Japandi atmosphere for slow
-        moments surrounded by light and greenery.
-      </p>
-      <span class="project__tag">Japandi · Indoor–Outdoor</span>
-    </div>
-  </article>
-
-  <!-- PROJECT 03 — Countryside Villa Bedroom -->
-  <article class="project project--03" id="project-3">
-    <div class="project__meta">
-      <span class="project__num">Project 03</span>
-      <h3 class="project__title">Countryside Villa Bedroom</h3>
-      <dl class="project__data">
-        <div><dt>Year</dt><dd>2024</dd></div>
-        <div><dt>Type</dt><dd>Residential</dd></div>
-      </dl>
-      <p class="project__copy">
-        A peaceful space that embraces simplicity. Woven details, natural wood tones, and
-        gentle light from large openings enhance the connection between interior comfort
-        and the surrounding countryside.
-      </p>
-      <span class="project__tag">3D Visualisation</span>
-    </div>
-
-    <div class="project__media project__media--pair">
-      <figure class="reveal"><img src="assets/img-031.jpg" alt="Countryside villa bedroom with view" loading="lazy"/></figure>
-      <figure class="reveal"><img src="assets/img-029.jpg" alt="Countryside villa corridor with rattan" loading="lazy"/></figure>
-    </div>
-  </article>
-
-  <!-- PROJECT 04 — Arwana In-House -->
-  <article class="project project--04" id="project-4">
-    <div class="project__media project__media--pair">
-      <figure class="reveal"><img src="assets/img-046.jpg" alt="Arwana — boardroom with wood ceiling" loading="lazy"/></figure>
-      <figure class="reveal"><img src="assets/img-083.jpg" alt="Arwana — granite catalog dining shot" loading="lazy"/></figure>
-    </div>
-
-    <div class="project__meta project__meta--right">
-      <span class="project__num">Project 04</span>
-      <h3 class="project__title">In-House Corporate at Arwana</h3>
-      <dl class="project__data">
-        <div><dt>Year</dt><dd>2024</dd></div>
-        <div><dt>Type</dt><dd>Office</dd></div>
-      </dl>
-      <p class="project__copy">
-        Compilation of Arwana's in-house work — a head office renovation that highlights
-        local materials and craftsmanship, plus catalog and marketing visualisations.
-        A warm, calming workspace built around repurposed wood and Indonesian texture.
-      </p>
-      <span class="project__tag">Office · Catalog · 3D</span>
-    </div>
-  </article>
-
-  <!-- PROJECT 05 — Vintage Photobox -->
-  <article class="project project--05" id="project-5">
-    <div class="project__meta">
-      <span class="project__num">Project 05 · <em>Winner</em></span>
-      <h3 class="project__title">Vintage Photobox Installation</h3>
-      <dl class="project__data">
-        <div><dt>Year</dt><dd>2024</dd></div>
-        <div><dt>Type</dt><dd>Design Competition</dd></div>
-      </dl>
-      <p class="project__copy">
-        An installation exploring vintage aesthetics through spatial design. The piece
-        combines nostalgic charm with interactive elements — antique polished walnut,
-        a velvet curtain, and checkered tile — to create a warm, memorable visual experience.
-      </p>
-      <span class="project__tag">Award-winning · Installation</span>
-    </div>
-
-    <div class="project__media project__media--pair">
-      <figure class="reveal"><img src="assets/img-092.jpg" alt="Vintage photobox — dark walnut version" loading="lazy"/></figure>
-      <figure class="reveal"><img src="assets/img-097.jpg" alt="Vintage photobox — white aluminum version" loading="lazy"/></figure>
-    </div>
-  </article>
-
-  <!-- PROJECT 06 — Blossom Affair -->
-  <article class="project project--06" id="project-6">
-    <div class="project__media project__media--feature">
-      <figure class="reveal feature-main"><img src="assets/img-099.jpg" alt="Blossom Affair — floral display detail" loading="lazy"/></figure>
-      <div class="project__media-row">
-        <figure class="reveal"><img src="assets/img-100.jpg" alt="Blossom Affair — full installation view" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-101.jpg" alt="Blossom Affair — pedestal arrangement" loading="lazy"/></figure>
-      </div>
-    </div>
-
-    <div class="project__meta project__meta--right">
-      <span class="project__num">Project 06</span>
-      <h3 class="project__title">Blossom Affair</h3>
-      <dl class="project__data">
-        <div><dt>Year</dt><dd>2025</dd></div>
-        <div><dt>Type</dt><dd>Concept Project</dd></div>
-      </dl>
-      <p class="project__copy">
-        A sweet yet elegant–vintage installation that blends pastel florals, artificial
-        vines, and structured geometry to create a romantic yet refined atmosphere — each
-        piece a centrepiece within the display.
-      </p>
-      <span class="project__tag">Retail Display · Concept</span>
-    </div>
-  </article>
-
-  <!-- PROJECT 07 — Matcha Café -->
-  <article class="project project--07" id="project-7">
-    <div class="project__meta">
-      <span class="project__num">Project 07</span>
-      <h3 class="project__title">Matcha Café</h3>
-      <dl class="project__data">
-        <div><dt>Year</dt><dd>2025</dd></div>
-        <div><dt>Type</dt><dd>Concept Project</dd></div>
-      </dl>
-      <p class="project__copy">
-        A Japandi-inspired café blending Japanese minimalism with Scandinavian warmth.
-        Natural materials, soft curves, and muted tones — the matcha bar serves as the
-        main feature, complemented by warm wood, curated fabric lighting, and a small
-        zen garden that evoke a serene, timeless simplicity.
-      </p>
-      <span class="project__tag">F&amp;B · Concept</span>
-    </div>
-
-    <div class="project__media project__media--feature">
-      <figure class="reveal feature-main"><img src="assets/img-108.jpg" alt="Matcha café — counter interior" loading="lazy"/></figure>
-      <div class="project__media-row">
-        <figure class="reveal"><img src="assets/img-106.jpg" alt="Matcha café — exterior" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-105.jpg" alt="Matcha café — tile and shelving detail" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
 
 </main>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="contact__inner">
-    <div class="section__head">
-      <span class="section__num">03 / Contact</span>
-      <h2 class="section__title">Get in<br/>touch.</h2>
-    </div>
-
-    <div class="contact__grid">
-      <a class="contact__card" href="mailto:nathaniajifia@gmail.com">
-        <span class="contact__label">Email</span>
-        <span class="contact__value">nathaniajifia@gmail.com</span>
-        <span class="contact__cta">Send a message <em>↗</em></span>
-      </a>
-
-      <a class="contact__card" href="tel:+6281219763238">
-        <span class="contact__label">Phone</span>
-        <span class="contact__value">+62 812 1976 3238</span>
-        <span class="contact__cta">Call or message <em>↗</em></span>
-      </a>
-
-      <div class="contact__card contact__card--static">
-        <span class="contact__label">Studio</span>
-        <span class="contact__value">Jakarta, Indonesia</span>
-        <span class="contact__cta-muted">Available remote &amp; on-site, worldwide</span>
-      </div>
-
-      <a class="contact__card" href="2025 Nathania Interior Design Portfolio_.pdf" target="_blank" rel="noopener">
-        <span class="contact__label">Document</span>
-        <span class="contact__value">PDF Portfolio</span>
-        <span class="contact__cta">Download <em>↓</em></span>
-      </a>
-    </div>
+  <div class="contact__inner reveal">
+    <p class="contact__kicker">Get in touch</p>
+    <a class="contact__mail" href="mailto:nathaniajifia@gmail.com">nathaniajifia@gmail.com</a>
+    <p class="contact__phone">+65 8964 9274</p>
   </div>
 
-  <div class="contact__base">
-    <span>Nathania Jifia · Selected Work 2025</span>
-    <span>© 2025 — All rights reserved</span>
-  </div>
+  <footer class="footer">
+    <span>Nathania Jifia</span>
+    <span>nathaniajifia@gmail.com</span>
+  </footer>
 </section>
 
 <script src="script.js"></script>
