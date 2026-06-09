@@ -24,7 +24,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   if (!slides.length) return;
 
-  const INTERVAL = 3000;
+  const INTERVAL = 2000;
   let current = 0;
   let timer = null;
 
