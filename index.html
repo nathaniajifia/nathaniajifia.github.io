@@ -1,353 +1,383 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nathania Jifia — Interior Designer</title>
-<meta name="description" content="Interior design portfolio by Nathania Jifia. Residential, hospitality, and installation projects." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-<!-- TOP NAV (white, with brand left + nav right) -->
-<header class="top" id="top">
-  <div class="top__inner">
-    <a href="#top" class="brand">Nathania Jifia</a>
-    <nav class="topnav">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<!doctype html>
+<html lang="en" style="height: 768px; --vh: 7.68px; overflow: visible; scrollbar-width: none; font-size: clamp(12px, 10.2241px + 0.4228vw, 16px);"><head><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/favicon.png">
+  <title>Nathania Jifia — Interior Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600&amp;display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family:"YAD1aU3sLnI_0"; src:url("assets/fonts/ce227117a9a4f3b60ded95174d6ebb58.woff") format("woff"); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:"YAD1aU3sLnI_0"; src:url("assets/fonts/fe4bbf2ac0e07574f48d1302ae4f9e1e.woff") format("woff"); font-weight:700; font-style:normal; font-display:swap; }
+    @font-face { font-family:"YAFdJpU7Kkk_0"; src:url("assets/fonts/e49fd1d75115e9d8ea5c43c920d10a93.woff") format("woff"); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:"YAFdJpU7Kkk_0"; src:url("assets/fonts/32e74e5d643babc8bcad959c9d737a88.woff") format("woff"); font-weight:600; font-style:normal; font-display:swap; }
+    :root { --ink:#29241f; --paper:#f4f0e9; --sand:#e6ddd0; --olive:#6d7160; --line:#cfc5b7; --accent:#8a654c; }
+    html { scroll-behavior:smooth; }
+    body { font-family:"DM Sans",sans-serif; color:var(--ink); background:var(--paper); }
+    h1,h2,h3 { font-family:"Fraunces",serif; }
+    .editorial-grid { background-image:linear-gradient(to right, rgba(41,36,31,.06) 1px, transparent 1px); background-size:calc(100% / 12) 100%; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:""; position:absolute; height:1px; left:0; bottom:-4px; width:0; background:currentColor; transition:width .25s ease; }
+    .nav-link:hover::after,.nav-link:focus-visible::after { width:100%; }
+    .project-card { transition:opacity .3s ease, transform .3s ease; }
+    .project-card:hover .project-image { transform:scale(1.04); }
+    .project-image { transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+    .filter-button[aria-pressed="true"] { background:#29241f; color:#f4f0e9; border-color:#29241f; }
+    .reveal { animation:reveal .7s both; }
+    @keyframes reveal { from {opacity:0;transform:translateY(14px)} to {opacity:1;transform:translateY(0)} }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+    .project-upload-area.is-dragging { outline:2px dashed var(--olive); outline-offset:-6px; background:#eee9e1; }
+    .upload-prompt span:first-child { font-size:22px; line-height:1; }
+    .project-modal[hidden] { display:none; }
+    .project-modal { position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:1rem; }
+    .project-modal-backdrop { position:absolute; inset:0; background:rgba(41,36,31,.62); backdrop-filter:blur(5px); }
+    .project-modal-panel { position:relative; width:min(920px,100%); max-height:calc(90 * min(var(--vh, 1vh), 1vh)); overflow:auto; border:1px solid var(--line); border-radius:24px; background:var(--paper); padding:2.5rem; box-shadow:0 24px 80px rgba(41,36,31,.28); animation:modal-in .25s ease both; }
+    .project-modal-close { position:absolute; right:1rem; top:1rem; z-index:2; width:2.5rem; height:2.5rem; border:1px solid var(--line); border-radius:999px; background:var(--paper); color:var(--ink); font-size:1.6rem; line-height:1; transition:background .2s ease,color .2s ease,transform .2s ease; }
+    .project-modal-close:hover { background:var(--ink); color:var(--paper); transform:rotate(8deg); }
+    .project-modal-content .project-card { display:grid; gap:1.25rem; }
+    .project-modal-content .project-card > div:first-child { max-height:48vh; }
+    .project-modal-content .project-card .project-image { height:auto; max-height:48vh; }
+    .project-modal-content .project-card h3 { margin-top:0; font-size:clamp(1.6rem,3vw,2.4rem); }
+    .project-modal-content .project-card p { max-width:680px; }
+    body.modal-open { overflow:hidden; }
+    @keyframes modal-in { from { opacity:0; transform:translateY(12px) scale(.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+    .project-detail-template { display:grid; gap:1.25rem; }
+    .project-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; }
+    .project-gallery-item { position:relative; min-width:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--sand); }
+    .project-gallery-item img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:grab; }
+    .project-gallery-item img:active { cursor:grabbing; }
+    .gallery-item-actions { display:flex; justify-content:space-between; gap:.35rem; padding:.45rem; background:var(--paper); }
+    .gallery-item-actions button,.gallery-add-button,.detail-edit-actions button { border:1px solid var(--line); border-radius:999px; background:var(--paper); color:var(--ink); padding:.45rem .7rem; font-size:.72rem; font-weight:600; }
+    .gallery-item-actions button:hover,.gallery-add-button:hover,.detail-edit-actions button:hover { background:var(--ink); color:var(--paper); }
+    .gallery-add-button { justify-self:start; }
+    .detail-edit-actions { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .detail-edit-actions button[data-action="save"] { background:var(--ink); color:var(--paper); }
+    .detail-editable[contenteditable="true"] { outline:2px dashed var(--accent); outline-offset:5px; border-radius:4px; }
+    @media (max-width:640px) { .project-modal-panel { padding:2.25rem 1.25rem 1.5rem; border-radius:18px; } .project-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.sticky{position:sticky}.top-0{top:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-5{margin-bottom:1.25rem}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-7{margin-top:1.75rem}.mt-9{margin-top:2.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-4{height:1rem}.h-72{height:18rem}.h-\[380px\]{height:380px}.h-full{height:100%}.w-full{width:100%}.w-4{width:1rem}.w-fit{width:-moz-fit-content;width:fit-content}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.gap-x-5{column-gap:1.25rem}.gap-y-12{row-gap:3rem}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-y{border-top-width:1px;border-bottom-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-\[\#aa9e90\]{--tw-border-opacity:1;border-color:rgb(170 158 144 / var(--tw-border-opacity, 1))}.border-\[\#cfc5b7\]{--tw-border-opacity:1;border-color:rgb(207 197 183 / var(--tw-border-opacity, 1))}.border-current{border-color:currentColor}.bg-\[\#29241f\]{--tw-bg-opacity:1;background-color:rgb(41 36 31 / var(--tw-bg-opacity, 1))}.bg-\[\#e6ddd0\]{--tw-bg-opacity:1;background-color:rgb(230 221 208 / var(--tw-bg-opacity, 1))}.bg-\[\#f4f0e9\]\/95{background-color:rgb(244 240 233 / 0.95)}.object-cover{object-fit:cover}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-1{padding-bottom:0.25rem}.pb-2{padding-bottom:0.5rem}.pb-8{padding-bottom:2rem}.pt-10{padding-top:2.5rem}.pt-6{padding-top:1.5rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-6{line-height:1.5rem}.leading-8{line-height:2rem}.leading-9{line-height:2.25rem}.leading-\[\.95\]{line-height:.95}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-\[0\.08em\]{letter-spacing:0.08em}.tracking-\[0\.12em\]{letter-spacing:0.12em}.tracking-\[0\.18em\]{letter-spacing:0.18em}.tracking-wider{letter-spacing:0.05em}.text-\[\#f4f0e9\]{--tw-text-opacity:1;color:rgb(244 240 233 / var(--tw-text-opacity, 1))}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}@media (min-width: 640px){.sm\:block{display:block}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 768px){.md\:col-span-3{grid-column:span 3 / span 3}.md\:col-span-4{grid-column:span 4 / span 4}.md\:col-span-5{grid-column:span 5 / span 5}.md\:col-span-7{grid-column:span 7 / span 7}.md\:col-span-9{grid-column:span 9 / span 9}.md\:h-\[590px\]{height:590px}.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}.md\:gap-10{gap:2.5rem}.md\:gap-7{gap:1.75rem}.md\:px-10{padding-left:2.5rem;padding-right:2.5rem}.md\:py-20{padding-top:5rem;padding-bottom:5rem}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+ <body data-template-id="__page-root" class="w-full" style="min-height: 768px; background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) !important; background-clip: border-box !important; background-size: 100vw 100vh !important; display: flow-root;">
+  <header data-template-id="site-header" class="canva-header sticky top-0 z-50 border-b border-[#cfc5b7] bg-[#f4f0e9]/95 backdrop-blur" style="background-image: linear-gradient(rgb(244, 240, 233), rgb(244, 240, 233)) !important; background-clip: border-box !important;">
+   <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10" aria-label="Primary navigation">
+    <a href="#top" data-template-id="wordmark" class="canva-link text-sm font-semibold tracking-[0.08em] uppercase" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">NJ Studio</a>
+    <div class="flex gap-4 text-xs font-medium uppercase tracking-[0.12em] md:gap-7">
+     <a class="nav-link" href="#about">About</a> <a class="nav-link" href="#work">Work</a> <a class="nav-link hidden sm:block" href="#experience">Experience</a> <a class="nav-link" href="#contact">Contact</a>
+    </div>
+   </nav>
+  </header>
+  <main id="top">
+   <section class="editorial-grid w-full border-b border-[#cfc5b7]">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:grid-cols-12 md:px-10 md:py-20">
+     <div class="flex flex-col justify-end md:col-span-5">
+      <p data-template-id="hero-kicker" class="canva-text mb-5 text-xs font-semibold uppercase tracking-[0.18em]" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">project portfolio</p>
+      <h1 data-template-id="hero-title" class="canva-text max-w-lg text-5xl leading-[.95] md:text-7xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 600 !important; font-style: normal !important; font-size: 2rem !important;" data-canva-font-size="2rem">Nathania  ★</h1>
+      <p data-template-id="hero-intro" class="canva-text mt-7 max-w-md text-base leading-relaxed md:text-lg" data-canva-font-size="1.125rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.125rem !important;">Interior Designer with a background in 
+Architecture Design and Digital Marketing.</p><a href="#work" data-template-id="hero-cta" class="canva-button mt-9 inline-flex w-fit items-center gap-3 border-b border-current pb-2 text-sm font-semibold uppercase tracking-[0.12em]" style="color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-weight: 600 !important; font-style: normal !important;"> <span data-template-id="hero-cta-label" class="canva-text" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">View selected work</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-down-right" aria-hidden="true" class="lucide lucide-arrow-down-right h-4 w-4"><path d="m7 7 10 10"></path><path d="M17 7v10H7"></path></svg> </a>
+     </div>
+     <div class="overflow-hidden md:col-span-7">
+      <img data-template-id="hero-image" loading="eager" class="canva-image h-[380px] w-full object-cover md:h-[590px]" alt="Interior-design portfolio image of a kitchen with a wooden ceiling and a large window." src="assets/media/43f1136b5ba924b011725a5cc77786ec.jpg">
+     </div>
+    </div>
+   </section>
+   <section id="about" class="w-full border-b border-[#cfc5b7]">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-12 md:px-10 md:py-24">
+     <div class="md:col-span-3">
+      <p data-template-id="about-label" class="canva-text text-xs font-semibold uppercase tracking-[0.18em]" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">About me</p>
+     </div>
+     <div class="md:col-span-5">
+      <h2 data-template-id="about-title" class="canva-text text-3xl leading-tight md:text-4xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.5rem !important;" data-canva-font-size="1.5rem">I Design Aesthetic Spaces.</h2>
+      <p data-template-id="about-copy" class="canva-text mt-6 text-base leading-8" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">An interior designer with over four years of design experience and a strong background in architecture and digital marketing. Passionate about creating visuals that communicate stories and ideas, supported by strong creative problem-solving and communication skills. A fast learner dedicated to delivering high-quality results and continuously grow as a designer.</p>
+      <div class="mt-9 grid grid-cols-3 gap-3 border-y border-[#cfc5b7] py-5">
+       <div>
+        <p data-template-id="fact-one-number" class="canva-text text-2xl" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">4+</p>
+        <p data-template-id="fact-one-label" class="canva-text mt-1 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Years of design experience</p>
+       </div>
+       <div>
+        <p data-template-id="fact-two-number" class="canva-text text-2xl" data-canva-font-size="1.125rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.125rem !important;">Architecture </p>
+        <p data-template-id="fact-two-label" class="canva-text mt-1 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Academic background</p>
+       </div>
+       <div>
+        <p data-template-id="fact-three-number" class="canva-text text-2xl" data-canva-font-size="1.125rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.125rem !important;"><br></p>
+        <p data-template-id="fact-three-label" class="canva-text mt-1 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;"><br></p>
+       </div>
+      </div>
+     </div>
+     <div class="md:col-span-4">
+      <img data-template-id="about-image" loading="eager" class="canva-image h-[380px] w-full object-cover" alt="Modern office with a desk, a plant, and a wall." src="assets/media/2fa00bc41931b6c9449912a481abfbc0.jpg">
+     </div>
+    </div>
+   </section>
+   <section id="work" class="w-full">
+    <div class="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24">
+     <div class="flex flex-col justify-between gap-7 border-b border-[#cfc5b7] pb-8 md:flex-row md:items-end">
+      <div>
+       <p data-template-id="work-label" class="canva-text text-xs font-semibold uppercase tracking-[0.18em]" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">Selected work</p>
+       <h2 data-template-id="work-title" class="canva-text mt-3 text-4xl md:text-5xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.5rem !important;" data-canva-font-size="1.5rem">Spaces with Intention.</h2>
+      </div>
+      <div class="flex flex-wrap gap-2" aria-label="Project filters">
+       <button type="button" class="filter-button rounded-full border border-[#cfc5b7] px-4 py-2 text-xs font-semibold uppercase tracking-wider" data-filter="all" aria-pressed="true">All</button> <button type="button" class="filter-button rounded-full border border-[#cfc5b7] px-4 py-2 text-xs font-semibold uppercase tracking-wider" data-filter="residential" aria-pressed="false">Residential</button> <button type="button" class="filter-button rounded-full border border-[#cfc5b7] px-4 py-2 text-xs font-semibold uppercase tracking-wider" data-filter="commercial" aria-pressed="false">Commercial</button> <button type="button" class="filter-button rounded-full border border-[#cfc5b7] px-4 py-2 text-xs font-semibold uppercase tracking-wider" data-filter="concept" aria-pressed="false">Concept</button>
+      </div>
+     </div>
+     <div id="project-grid" class="grid gap-x-5 gap-y-12 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="project-card" data-category="residential" tabindex="0" role="button" aria-label="View project details">
+       <div class="overflow-hidden"><img data-template-id="project-m-image" loading="eager" class="canva-image project-image h-72 w-full object-cover" alt="Kitchen with a wooden ceiling and a large window from the portfolio." src="assets/media/17f0859b18a990e4683ab88cbde8141d.jpg">
+       </div>
+       <p data-template-id="project-m-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2024 · Residential </p>
+       <h3 data-template-id="project-m-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">M Living Room</h3>
+       <p data-template-id="project-m-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A modern, sophisticated living space blending warmth and elegance through soft wood tones, dark marble, and a high ceiling.</p>
+      </article>
+      <article class="project-card" data-category="residential" tabindex="0" role="button" aria-label="View project details">
+       <div class="overflow-hidden"><img data-template-id="project-pavilion-image" loading="eager" class="canva-image project-image h-72 w-full object-cover" alt="Modern kitchen with a bar and chairs from the portfolio." src="assets/media/04c1eb3edf1558835571548cfe217042.jpg">
+       </div>
+       <p data-template-id="project-pavilion-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2024 · Residential</p>
+       <h3 data-template-id="project-pavilion-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Pavilion Dining Space</h3>
+       <p data-template-id="project-pavilion-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A semi-outdoor dining area that blurs indoor and outdoor boundaries with natural materials, neutral tones, and a warm Japandi atmosphere.</p>
+      </article>
+      <article class="project-card" data-category="commercial" tabindex="0" role="button" aria-label="View project details">
+       <div class="overflow-hidden"><img data-template-id="project-corporate-image" loading="eager" class="canva-image project-image h-72 w-full object-cover" alt="Modern office with a desk, a plant, and a wall from the portfolio." src="assets/media/bd59c552726914423f599681b8cfd5cf.png">
+       </div>
+       <p data-template-id="project-corporate-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2023–2025 · office</p>
+       <h3 data-template-id="project-corporate-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Corporate Project - PT Arwana Citramulia</h3>
+       <p data-template-id="project-corporate-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A collection of innovative in-house designs, including a head office and Showroom renovation inspired by Indonesia’s nature and craftsmanship.</p>
+      </article>
+      <article class="project-card" data-category="concept" tabindex="0" role="button" aria-label="View project details">
+       <div class="overflow-hidden"><img data-template-id="project-vintage-image" loading="eager" class="canva-image project-image h-72 w-full object-cover" alt="Interior design project image from Nathania Jifia’s portfolio." src="assets/media/93b155f72ba93c9614fadf516700c0a5.jpg">
+       </div>
+       <p data-template-id="project-vintage-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2024 · Design competition · Winner</p>
+       <h3 data-template-id="project-vintage-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Vintage Photobox Installation</h3>
+       <p data-template-id="project-vintage-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A vintage aesthetic installation combining nostalgic charm and interactive elements, with aluminum, dark walnut laminate, and a black-and-white scheme.</p>
+      </article>
+      <article class="project-card" data-category="concept" tabindex="0" role="button" aria-label="View project details">
+       <div class="overflow-hidden"><img data-template-id="project-matcha-image" loading="eager" class="canva-image project-image h-72 w-full object-cover" alt="Modern kitchen with a bar and chairs from the portfolio." src="assets/media/7b30f8d0ab0693d7043b6739117fc6b5.jpg">
+       </div>
+       <p data-template-id="project-matcha-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2025 · Concept project</p>
+       <h3 data-template-id="project-matcha-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Matcha Café</h3>
+       <p data-template-id="project-matcha-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A Japandi inspired café with natural materials, soft curves, muted tones, a matcha bar, warm lighting, and a small zen garden.</p>
+      </article>
+      <article class="project-card" data-category="concept" tabindex="0" role="button" aria-label="View project details">
+       <div class="relative h-72 w-full overflow-hidden"><img data-template-id="project-blossom-image" loading="eager" class="canva-image project-image h-full w-full object-cover" alt="Interior design project image from Nathania Jifia’s portfolio." src="assets/media/ca88e64c4315230d03b99bfabfc3695a.jpg">
+       </div>
+       <p data-template-id="project-blossom-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2025 · Concept project</p>
+       <h3 data-template-id="project-blossom-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Blossom Affair</h3>
+       <p data-template-id="project-blossom-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A sweet yet elegant-vintage installation blending pastel florals, artificial vines, and structured geometry for a romantic, refined display.</p>
+      </article>
+      <article class="project-card" data-category="residential" tabindex="0" role="button" aria-label="View project details">
+       <div class="relative h-72 w-full overflow-hidden"><img data-template-id="project-scondo-image" loading="eager" class="canva-image project-image h-full w-full object-cover" alt="Modern office interior from Nathania Jifia’s portfolio." src="assets/media/75b38b5e3af5a839f9d00f089e58af5b.jpg">
+       </div>
+       <p data-template-id="project-scondo-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2026 · Residential</p>
+       <h3 data-template-id="project-scondo-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">LS Condominium</h3>
+       <p data-template-id="project-scondo-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A modern contemporary home for a Singaporean client, focused on transforming living and dining areas with bespoke carpentry and functional storage.</p>
+      </article>
+      <article class="project-card" data-category="residential" tabindex="0" role="button" aria-label="View project details">
+       <div class="relative h-72 w-full overflow-hidden"><img data-template-id="project-vhouse-image" loading="eager" class="canva-image project-image h-full w-full object-cover" alt="Interior design project image from Nathania Jifia’s portfolio." src="assets/media/2195c7f980fc47145066861151dfd0dc.jpg">
+       </div>
+       <p data-template-id="project-vhouse-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2026 · Residential</p>
+       <h3 data-template-id="project-vhouse-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">V House</h3>
+       <p data-template-id="project-vhouse-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Full home renovation and 3D visualization for a warm, light-filled three-bedroom apartment in soft oak, cream, and sage.</p>
+      </article>
+      <article class="project-card" data-category="residential" tabindex="0" role="button" aria-label="View project details">
+       <div class="relative h-72 w-full overflow-hidden"><img data-template-id="project-sasi-image" loading="eager" class="canva-image project-image h-full w-full object-cover" alt="Interior design project image from Nathania Jifia’s portfolio." src="assets/media/42269e77fd22b1d6dd7a5ab901c0bc9d.jpg">
+       </div>
+       <p data-template-id="project-sasi-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2026 · Residential</p>
+       <h3 data-template-id="project-sasi-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Sasi House</h3>
+       <p data-template-id="project-sasi-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A contemporary condominium designed around warmth, functionality, and understated elegance, with full-height cabinetry and integrated lighting.</p>
+      </article>
+      <article class="project-card" data-category="residential" tabindex="0" role="button" aria-label="View project details">
+       <div class="relative h-72 w-full overflow-hidden"><img data-template-id="project-bedroom-image" loading="eager" class="canva-image project-image h-full w-full object-cover" alt="Interior design project image from Nathania Jifia’s portfolio." src="assets/media/073daeab7a9abb8c49d13ff943ebcbe4.jpg">
+       </div>
+       <p data-template-id="project-bedroom-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2026 · Residential</p>
+       <h3 data-template-id="project-bedroom-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Ong Apartment</h3>
+       <p data-template-id="project-bedroom-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A warm modern minimalist apartment renovation featuring a timber slat feature wall, integrated vanity, backlit mirror, and layered lighting.</p>
+      </article>
+      <article class="project-card" data-category="residential" tabindex="0" role="button" aria-label="View project details">
+       <div class="relative h-72 w-full overflow-hidden"><img data-template-id="project-villa-image" loading="eager" class="canva-image project-image h-full w-full object-cover" alt="Interior design project image from Nathania Jifia’s portfolio." src="assets/media/50baa484a92455346607b7c5729ecc0e.jpg">
+       </div>
+       <p data-template-id="project-villa-meta" class="canva-text mt-4 text-xs uppercase tracking-wider" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2024 · Residential</p>
+       <h3 data-template-id="project-villa-title" class="canva-text mt-2 text-2xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Countryside Villa Bedroom</h3>
+       <p data-template-id="project-villa-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">A peaceful bedroom that embraces simplicity, woven details, natural wood tones, and gentle light from large openings.</p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="experience" class="w-full border-y border-[#cfc5b7] bg-[#e6ddd0]">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-12 md:px-10 md:py-24">
+     <div class="md:col-span-3">
+      <p data-template-id="experience-label" class="canva-text text-xs font-semibold uppercase tracking-[0.18em]" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">Professional experience</p>
+      <h2 data-template-id="experience-title" class="canva-text mt-3 text-4xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.5rem !important;" data-canva-font-size="1.5rem">The Journey</h2>
+     </div>
+     <div class="md:col-span-9">
+      <article class="grid gap-3 border-t border-[#aa9e90] py-6 md:grid-cols-4">
+       <p data-template-id="exp-arwana-date" class="canva-text text-sm" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2023–2026</p>
+       <div class="md:col-span-3">
+        <h3 data-template-id="exp-arwana-title" class="canva-text text-xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Inhouse Interior Designer · PT Arwana Citramulia Tbk</h3>
+        <p data-template-id="exp-arwana-copy" class="canva-text mt-3 max-w-2xl text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Developed concepts, technical and elevation drawings, presentation decks, material selections, and 3D visualizations. Supervised construction progress, conducted site visits, and collaborated with the Head of Design and vendors.</p>
+       </div>
+      </article>
+      <article class="grid gap-3 border-t border-[#aa9e90] py-6 md:grid-cols-4">
+       <p data-template-id="exp-freelance-date" class="canva-text text-sm" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2021–2024</p>
+       <div class="md:col-span-3">
+        <h3 data-template-id="exp-freelance-title" class="canva-text text-xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Freelance Designer</h3>
+        <p data-template-id="exp-freelance-copy" class="canva-text mt-3 max-w-2xl text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Designed two modern websites using WordPress and Figma, and created visual layouts, branding, presentation decks, and video content for Singapore clients and YouTube projects.</p>
+       </div>
+      </article>
+      <article class="grid gap-3 border-t border-[#aa9e90] py-6 md:grid-cols-4">
+       <p data-template-id="exp-boga-date" class="canva-text text-sm" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2022–2023</p>
+       <div class="md:col-span-3">
+        <h3 data-template-id="exp-boga-title" class="canva-text text-xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Content Strategist · Boga Group</h3>
+        <p data-template-id="exp-boga-copy" class="canva-text mt-3 max-w-2xl text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Led content strategy and creative direction for multiple F&amp;B brands. Increased social media visitors by 908% and engagement by 2800% within three months through organic content, with videos reaching over 1 million views on Reels and TikTok.</p>
+       </div>
+      </article>
+      <article class="grid gap-3 border-y border-[#aa9e90] py-6 md:grid-cols-4">
+       <p data-template-id="exp-ipoise-date" class="canva-text text-sm" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">2026</p>
+       <div class="md:col-span-3">
+        <h3 data-template-id="exp-ipoise-title" class="canva-text text-xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.1875rem !important;" data-canva-font-size="1.1875rem">Interior Designer · iPoise Design</h3>
+        <p data-template-id="exp-ipoise-copy" class="canva-text mt-3 max-w-2xl text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Drafted functional interior layouts, conducted client meetings, selected materials and finishes, prepared mood boards, coordinated with project teams, and used AI rendering tools to develop realistic client visuals.</p>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="w-full">
+    <div class="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-2 md:px-10 md:py-24">
+     <div>
+      <p data-template-id="skills-label" class="canva-text text-xs font-semibold uppercase tracking-[0.18em]" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">Capabilities</p>
+      <h2 data-template-id="skills-title" class="canva-text mt-3 text-4xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.5rem !important;" data-canva-font-size="1.5rem">Skills</h2>
+      <p data-template-id="skills-list" class="canva-text mt-7 max-w-md text-lg leading-9" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Visual Storytelling
+Sales &amp; Marketing
+Adobe Photoshop
+Enscape
+AutoCAD
+SketchUp
+Microsoft Office</p>
+     </div>
+     <div>
+      <p data-template-id="languages-label" class="canva-text text-xs font-semibold uppercase tracking-[0.18em]" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">Communication</p>
+      <h2 data-template-id="languages-title" class="canva-text mt-3 text-4xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.5rem !important;" data-canva-font-size="1.5rem">Languages</h2>
+      <p data-template-id="languages-list" class="canva-text mt-7 text-lg leading-9" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">English — C1 (Advanced), certified by IELTS
+Mandarin — HSK 2 (Elementary beginner level)
+Bahasa — Native language</p>
+      <div class="mt-10 border-t border-[#cfc5b7] pt-6">
+       <p data-template-id="education-label" class="canva-text text-xs font-semibold uppercase tracking-[0.18em]" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(109, 113, 96) !important; --canva-color: #6d7160ff; caret-color: rgb(109, 113, 96) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">Education</p>
+       <p data-template-id="education-copy" class="canva-text mt-3 text-sm leading-6" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(81, 74, 66) !important; --canva-color: #514a42ff; caret-color: rgb(81, 74, 66) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Tarumanagara University / Architecture
+Qualified for Scopus index International Journals in Interior
+SMAK 1 PENABUR Jakarta</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="contact" data-template-id="contact-section" class="canva-section w-full" style="background-image: linear-gradient(rgb(138, 101, 76), rgb(138, 101, 76)) !important; background-clip: border-box !important;">
+    <div class="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24">
+     <p data-template-id="contact-label" class="canva-text text-xs font-semibold uppercase tracking-[0.18em]" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(244, 240, 233) !important; --canva-color: #f4f0e9ff; caret-color: rgb(244, 240, 233) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">Contact</p>
+     <h2 data-template-id="contact-title" class="canva-text mt-4 max-w-3xl text-4xl leading-tight md:text-6xl" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(244, 240, 233) !important; --canva-color: #f4f0e9ff; caret-color: rgb(244, 240, 233) !important; font-family: YAFdJpU7Kkk_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1.5rem !important;" data-canva-font-size="1.5rem">Looking forward to connect with you.</h2>
+     <div class="mt-10 flex flex-col gap-3 text-lg md:flex-row md:gap-10">
+      <a data-template-id="contact-email" class="canva-link border-b border-current pb-1 w-fit" href="mailto:nathaniajifia@gmail.com" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(244, 240, 233) !important; --canva-color: #f4f0e9ff; caret-color: rgb(244, 240, 233) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">nathaniajifia@gmail.com</a> <a data-template-id="contact-phone" class="canva-link border-b border-current pb-1 w-fit" href="tel:+6589649274" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(244, 240, 233) !important; --canva-color: #f4f0e9ff; caret-color: rgb(244, 240, 233) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">+65 89649274</a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <div id="project-modal" class="project-modal" hidden="" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+   <div class="project-modal-backdrop" data-modal-close="true"></div>
+   <div class="project-modal-panel" role="document"><button type="button" data-template-id="project-modal-close" class="canva-button project-modal-close" aria-label="Close project details" data-canva-font-size="1.5rem" style="background-image: linear-gradient(rgb(244, 240, 233), rgb(244, 240, 233)) !important; background-clip: border-box !important; white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(41, 36, 31) !important; --canva-color: #29241fff; caret-color: rgb(41, 36, 31) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1.5rem !important;">×</button>
+    <div id="project-modal-content" class="project-modal-content"></div>
+   </div>
   </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__caption">
-      <p class="hero__sub">Interior Designer</p>
-    </div>
-
-    <div class="carousel" id="carousel">
-      <div class="carousel__stage">
-        <figure class="slide" data-name="M Living Room"             data-type="Residential"><img src="assets/img-007.jpg" alt="M Living Room" loading="eager"/></figure>
-        <figure class="slide" data-name="Pavillon Dining Space"     data-type="Residential"><img src="assets/img-026.jpg" alt="Pavillon Dining Space" loading="lazy"/></figure>
-        <figure class="slide" data-name="Countryside Villa Bedroom" data-type="Residential"><img src="assets/img-031.jpg" alt="Countryside Villa Bedroom" loading="lazy"/></figure>
-        <figure class="slide" data-name="Inhouse Corporate Project" data-type="Office"><img src="assets/img-046.jpg" alt="Inhouse Corporate Project" loading="lazy"/></figure>
-        <figure class="slide" data-name="Vintage Photobox"          data-type="Design Competition"><img src="assets/img-092.jpg" alt="Vintage Photobox Installation" loading="lazy"/></figure>
-        <figure class="slide" data-name="Blossom Affair"            data-type="Concept Project"><img src="assets/img-099.jpg" alt="Blossom Affair" loading="lazy"/></figure>
-        <figure class="slide" data-name="Matcha Café"               data-type="Concept Project"><img src="assets/img-108.jpg" alt="Matcha Café" loading="lazy"/></figure>
-        <figure class="slide" data-name="S Condominium"             data-type="Residential"><img src="assets/scondo/scondo-017-002.jpg" alt="S Condominium" loading="lazy"/></figure>
-      </div>
-
-      <span class="carousel__counter">
-        <span class="carousel__index">01</span>
-        <span class="carousel__sep">/</span>
-        <span class="carousel__total">08</span>
-      </span>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section class="work" id="work">
-    <header class="kicker">
-      <span>Work</span>
-    </header>
-
-    <div class="grid">
-
-      <a class="tile reveal" href="#project-1">
-        <figure class="tile__img"><img src="assets/img-007.jpg" alt="M Living Room" loading="lazy"/></figure>
-        <figcaption class="tile__cap">
-          <span class="tile__name">M Living Room</span>
-          <span class="tile__type">Residential</span>
-        </figcaption>
-      </a>
-
-      <a class="tile reveal" href="#project-2">
-        <figure class="tile__img"><img src="assets/img-026.jpg" alt="Pavillon Dining Space" loading="lazy"/></figure>
-        <figcaption class="tile__cap">
-          <span class="tile__name">Pavillon Dining Space</span>
-          <span class="tile__type">Residential</span>
-        </figcaption>
-      </a>
-
-      <a class="tile reveal" href="#project-3">
-        <figure class="tile__img"><img src="assets/img-031.jpg" alt="Countryside Villa Bedroom" loading="lazy"/></figure>
-        <figcaption class="tile__cap">
-          <span class="tile__name">Countryside Villa Bedroom</span>
-          <span class="tile__type">Residential</span>
-        </figcaption>
-      </a>
-
-      <a class="tile reveal" href="#project-4">
-        <figure class="tile__img"><img src="assets/img-046.jpg" alt="Inhouse Corporate Project" loading="lazy"/></figure>
-        <figcaption class="tile__cap">
-          <span class="tile__name">Inhouse Corporate Project</span>
-          <span class="tile__type">Office</span>
-        </figcaption>
-      </a>
-
-      <a class="tile reveal" href="#project-5">
-        <figure class="tile__img"><img src="assets/img-092.jpg" alt="Vintage Photobox Installation" loading="lazy"/></figure>
-        <figcaption class="tile__cap">
-          <span class="tile__name">Vintage Photobox Installation</span>
-          <span class="tile__type">Design Competition</span>
-        </figcaption>
-      </a>
-
-      <a class="tile reveal" href="#project-6">
-        <figure class="tile__img"><img src="assets/img-099.jpg" alt="Blossom Affair" loading="lazy"/></figure>
-        <figcaption class="tile__cap">
-          <span class="tile__name">Blossom Affair</span>
-          <span class="tile__type">Concept Project</span>
-        </figcaption>
-      </a>
-
-      <a class="tile reveal" href="#project-7">
-        <figure class="tile__img"><img src="assets/img-108.jpg" alt="Matcha Café" loading="lazy"/></figure>
-        <figcaption class="tile__cap">
-          <span class="tile__name">Matcha Café</span>
-          <span class="tile__type">Concept Project</span>
-        </figcaption>
-      </a>
-
-      <a class="tile reveal" href="#project-8">
-        <figure class="tile__img"><img src="assets/scondo/scondo-017-002.jpg" alt="S Condominium" loading="lazy"/></figure>
-        <figcaption class="tile__cap">
-          <span class="tile__name">S Condominium</span>
-          <span class="tile__type">Residential</span>
-        </figcaption>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- PROJECT DETAILS -->
-
-  <article class="story" id="project-1">
-    <div class="story__inner">
-      <header class="story__head">
-        <span class="story__num">Project 01</span>
-        <h2 class="story__title">M Living Room</h2>
-        <span class="story__type">Residential</span>
-      </header>
-      <p class="story__copy">
-        A modern, sophisticated living space that blends warmth and elegance. The high
-        ceiling opens up the room, creating gentle lighting and a cozy atmosphere. Soft
-        wood tones and dark marble form a calm, contemporary atmosphere, perfect for
-        relaxing or gathering with loved ones.
-      </p>
-      <div class="story__gallery">
-        <figure class="reveal"><img src="assets/img-007.jpg" alt="M Living Room — bar and kitchen" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-020.jpg" alt="M Living Room — dining nook" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-008.jpg" alt="M Living Room — TV wall detail" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="story" id="project-2">
-    <div class="story__inner">
-      <header class="story__head">
-        <span class="story__num">Project 02</span>
-        <h2 class="story__title">Pavillon Dining Space</h2>
-        <span class="story__type">Residential</span>
-      </header>
-      <p class="story__copy">
-        A semi-outdoor dining area designed to blur the boundaries between indoor and
-        outdoor. The wooden slatted roof filters sunlight beautifully throughout the day,
-        casting soft shadows that bring the space to life. Natural materials and neutral
-        tones create a warm <em>Japandi</em> atmosphere.
-      </p>
-      <div class="story__gallery">
-        <figure class="reveal"><img src="assets/img-026.jpg" alt="Pavillon dining — semi-outdoor kitchen" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-025.jpg" alt="Pavillon dining — glass facade and timber decking" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="story" id="project-3">
-    <div class="story__inner">
-      <header class="story__head">
-        <span class="story__num">Project 03</span>
-        <h2 class="story__title">Countryside Villa Bedroom</h2>
-        <span class="story__type">Residential</span>
-      </header>
-      <p class="story__copy">
-        A peaceful space that feels warm and embraces simplicity. Woven details, natural
-        wood tones, and gentle light from large openings enhance the connection between
-        interior comfort and the surrounding countryside.
-      </p>
-      <div class="story__gallery">
-        <figure class="reveal"><img src="assets/img-031.jpg" alt="Countryside villa bedroom with view" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-029.jpg" alt="Countryside villa corridor with rattan" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="story" id="project-4">
-    <div class="story__inner">
-      <header class="story__head">
-        <span class="story__num">Project 04</span>
-        <h2 class="story__title">Inhouse Corporate Project</h2>
-        <span class="story__type">Office</span>
-      </header>
-      <p class="story__copy">
-        A compilation of Arwana's in-house projects — innovative designs developed and
-        managed internally to meet the company's functional and creative needs. A head
-        office renovation highlighting local materials and craftsmanship, inspired by
-        Indonesia's nature and the warmth of repurposed factory wood.
-      </p>
-      <div class="story__gallery">
-        <figure class="reveal"><img src="assets/img-046.jpg" alt="Arwana — boardroom with wood ceiling" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-083.jpg" alt="Arwana — granite catalog dining shot" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="story" id="project-5">
-    <div class="story__inner">
-      <header class="story__head">
-        <span class="story__num">Project 05 — <em>Competition Winner</em></span>
-        <h2 class="story__title">Vintage Photobox Installation</h2>
-        <span class="story__type">Design Competition</span>
-      </header>
-      <p class="story__copy">
-        An installation competition exploring vintage aesthetics through spatial design.
-        The project combines nostalgic charm with interactive elements — antique polished
-        walnut and velvet curtains alongside an aluminum, black and white scheme.
-      </p>
-      <div class="story__gallery">
-        <figure class="reveal"><img src="assets/img-092.jpg" alt="Vintage photobox — dark walnut version" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-097.jpg" alt="Vintage photobox — white aluminum version" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="story" id="project-6">
-    <div class="story__inner">
-      <header class="story__head">
-        <span class="story__num">Project 06</span>
-        <h2 class="story__title">Blossom Affair</h2>
-        <span class="story__type">Concept Project</span>
-      </header>
-      <p class="story__copy">
-        A sweet yet elegant-vintage installation that blends pastel florals, artificial
-        vines, and structured geometry to create a romantic yet refined atmosphere.
-      </p>
-      <div class="story__gallery">
-        <figure class="reveal"><img src="assets/img-099.jpg" alt="Blossom Affair — floral detail" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-100.jpg" alt="Blossom Affair — full installation" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-101.jpg" alt="Blossom Affair — pedestal arrangement" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="story" id="project-7">
-    <div class="story__inner">
-      <header class="story__head">
-        <span class="story__num">Project 07</span>
-        <h2 class="story__title">Matcha Café</h2>
-        <span class="story__type">Concept Project</span>
-      </header>
-      <p class="story__copy">
-        A Japandi-inspired café blending Japanese minimalism with Scandinavian warmth.
-        Natural materials, soft curves, and muted tones. The matcha bar serves as the
-        main feature, complemented by warm wood and a small zen garden — together they
-        evoke a serene balance and timeless simplicity.
-      </p>
-      <div class="story__gallery">
-        <figure class="reveal"><img src="assets/img-108.jpg" alt="Matcha café — counter interior" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-106.jpg" alt="Matcha café — exterior" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/img-105.jpg" alt="Matcha café — tile and shelving detail" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="story" id="project-8">
-    <div class="story__inner">
-      <header class="story__head">
-        <span class="story__num">Project 08</span>
-        <h2 class="story__title">S Condominium</h2>
-        <span class="story__type">Residential</span>
-      </header>
-      <p class="story__copy">
-        A Modern Contemporary home designed for a Singaporean client. A partial renovation
-        focused on transforming the living and dining areas, with bespoke carpentry for
-        the study and a platform bed in the master bedroom. Clean lines and storage
-        functionality create a spacious environment that enhances comfort and everyday living.
-      </p>
-      <div class="story__gallery">
-        <figure class="reveal"><img src="assets/scondo/scondo-017-002.jpg" alt="S Condominium — living room" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/scondo/scondo-017-000.jpg" alt="S Condominium — dining nook" loading="lazy"/></figure>
-        <figure class="reveal"><img src="assets/scondo/scondo-017-001.jpg" alt="S Condominium — kitchen and entry" loading="lazy"/></figure>
-      </div>
-    </div>
-  </article>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <header class="kicker"><span>About</span></header>
-
-    <div class="about__grid">
-      <figure class="about__photo reveal">
-        <img src="assets/img-003.jpg" alt="Portrait of Nathania Jifia" loading="lazy" />
-      </figure>
-
-      <div class="about__copy reveal">
-        <p class="about__lede">
-          An interior designer with over four years of experience and a background in
-          architecture and digital marketing. I create visuals that communicate stories
-          and ideas — pairing strong problem-solving with a calm, considered eye for space.
-        </p>
-
-        <dl class="about__list">
-          <div>
-            <dt>Education</dt>
-            <dd>Tarumanagara University — Architecture<br/>SMAK 1 PENABUR Jakarta</dd>
-          </div>
-          <div>
-            <dt>Languages</dt>
-            <dd>English (C1, IELTS) · Mandarin (HSK 2) · Bahasa (Native)</dd>
-          </div>
-          <div>
-            <dt>Skills</dt>
-            <dd>Visual Storytelling · Sketchup · AutoCAD · Enscape · Adobe Photoshop</dd>
-          </div>
-          <div>
-            <dt>Experience</dt>
-            <dd>
-              Interior Designer — iPoise Design<br/>
-              In-House Designer — PT Arwana Citramulia<br/>
-              Content Strategist — Boga Group<br/>
-              Freelance Designer
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact__inner reveal">
-    <p class="contact__kicker">Get in touch</p>
-    <a class="contact__mail" href="mailto:nathaniajifia@gmail.com">nathaniajifia@gmail.com</a>
-    <p class="contact__phone">+65 8964 9274</p>
-  </div>
-
-  <footer class="footer">
-    <span>Nathania Jifia</span>
-    <span>nathaniajifia@gmail.com</span>
+  <footer class="w-full bg-[#29241f] px-5 py-6 text-[#f4f0e9] md:px-10">
+   <div class="mx-auto flex max-w-7xl justify-between text-xs uppercase tracking-wider">
+    <p data-template-id="footer-name" class="canva-text" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(244, 240, 233) !important; --canva-color: #f4f0e9ff; caret-color: rgb(244, 240, 233) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 700 !important; font-style: normal !important; font-size: 1rem !important;">Nathania Jifia</p>
+    <p data-template-id="footer-credit" class="canva-text" data-canva-font-size="1rem" style="white-space: pre-wrap !important; overflow-wrap: normal !important; line-height: normal !important; color: rgb(244, 240, 233) !important; --canva-color: #f4f0e9ff; caret-color: rgb(244, 240, 233) !important; font-family: YAD1aU3sLnI_0, auto !important; font-weight: 400 !important; font-style: normal !important; font-size: 1rem !important;">Interior Designer · 2026</p>
+   </div>
   </footer>
-</section>
-
-<script src="script.js"></script>
-</body>
-</html>
+  <script>
+    document.querySelectorAll(".project-upload-area").forEach(area => {
+      const input = area.querySelector('input[type="file"]');
+      const image = area.querySelector("img");
+      function showImage(file) {
+        if (!file || !file.type.startsWith("image/")) return;
+        if (image.dataset.localUrl) URL.revokeObjectURL(image.dataset.localUrl);
+        const url = URL.createObjectURL(file);
+        image.dataset.localUrl = url;
+        image.src = url;
+        image.classList.remove("hidden");
+        area.querySelector(".upload-prompt").classList.add("hidden");
+      }
+      input.addEventListener("change", () => showImage(input.files[0]));
+      area.addEventListener("dragover", event => { event.preventDefault(); area.classList.add("is-dragging"); });
+      area.addEventListener("dragleave", event => { if (!area.contains(event.relatedTarget)) area.classList.remove("is-dragging"); });
+      area.addEventListener("drop", event => {
+        event.preventDefault(); area.classList.remove("is-dragging");
+        showImage(event.dataTransfer.files[0]);
+      });
+    });
+    document.querySelectorAll(".filter-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        document.querySelectorAll(".filter-button").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+        document.querySelectorAll(".project-card").forEach(card => {
+          const visible = filter === "all" || card.dataset.category === filter;
+          card.style.display = visible ? "" : "none";
+        });
+      });
+    });
+    const modal = document.getElementById("project-modal");
+    const modalContent = document.getElementById("project-modal-content");
+    const modalClose = modal.querySelector(".project-modal-close");
+    let lastFocused;
+    function closeProjectModal() {
+      modal.hidden = true;
+      document.body.classList.remove("modal-open");
+      modalContent.replaceChildren();
+      if (lastFocused) lastFocused.focus();
+    }
+    function openProjectModal(card) {
+      lastFocused = document.activeElement;
+      const detail = card.cloneNode(true);
+      detail.classList.add("project-detail-template");
+      detail.removeAttribute("tabindex");
+      detail.removeAttribute("role");
+      detail.querySelectorAll("img").forEach(image => image.draggable = false);
+      const title = detail.querySelector("h3");
+      const copy = detail.querySelector("p:last-child");
+      const gallery = document.createElement("div");
+      gallery.className = "project-gallery";
+      const sourceImage = detail.querySelector("img");
+      if (sourceImage) {
+        for (let slot = 0; slot < 3; slot += 1) {
+          const item = document.createElement("div");
+          item.className = "project-gallery-item";
+          const image = sourceImage.cloneNode(true);
+          image.draggable = false;
+          item.append(image);
+          gallery.append(item);
+        }
+      }
+      detail.querySelector("div.overflow-hidden, div.relative")?.remove();
+      detail.prepend(gallery);
+      modalContent.replaceChildren(detail);
+      modal.hidden = false;
+      document.body.classList.add("modal-open");
+      modalClose.focus();
+    }
+    document.querySelectorAll(".project-card").forEach(card => {
+      card.addEventListener("click", event => {
+        if (event.target.closest("a,button")) return;
+        openProjectModal(card);
+      });
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openProjectModal(card); }
+      });
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", "View project details");
+    });
+    modal.addEventListener("click", event => {
+      if (event.target.dataset.modalClose === "true" || event.target === modalClose) closeProjectModal();
+    });
+    document.addEventListener("keydown", event => {
+      if (modal.hidden) return;
+      if (event.key === "Escape") closeProjectModal();
+      if (event.key === "Tab") {
+        const focusables = [modalClose];
+        if (focusables.length && event.shiftKey && document.activeElement === focusables[0]) { event.preventDefault(); focusables[0].focus(); }
+      }
+    });
+  </script>
+ 
+<canva-element-overlay style="position: fixed; z-index: 2147483647; pointer-events: none;"></canva-element-overlay></body></html>
